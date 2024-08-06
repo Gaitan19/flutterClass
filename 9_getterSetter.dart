@@ -1,5 +1,3 @@
-import 'dart:math';
-
 void main() {
   final mySquare = Square(side: -5);
 
