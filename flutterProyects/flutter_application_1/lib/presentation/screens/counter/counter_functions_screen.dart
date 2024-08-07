@@ -45,39 +45,51 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
         floatingActionButton: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              shape: const StadiumBorder(),
-              onPressed: () {
-                setState(() {
-                  clickCounter = 0;
-                });
-              },
-              tooltip: 'Increment',
-              child: const Icon(Icons.refresh_outlined),
+            CustomButton(
+              icon: Icons.refresh_outlined,
+              onPressed: () => setState(() {
+                clickCounter = 0;
+              }),
             ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              shape: const StadiumBorder(),
-              onPressed: () {
-                setState(() {
-                  clickCounter++;
-                });
-              },
-              tooltip: 'Increment',
-              child: const Icon(Icons.plus_one),
+            SizedBox(height: 10),
+            CustomButton(
+              icon: Icons.plus_one,
+              onPressed: () => setState(() {
+                clickCounter++;
+              }),
             ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              shape: const StadiumBorder(),
-              onPressed: () {
-                setState(() {
-                  clickCounter--;
-                });
-              },
-              tooltip: 'Increment',
-              child: const Icon(Icons.exposure_minus_1),
+            SizedBox(height: 10),
+            CustomButton(
+              icon: Icons.exposure_minus_1,
+              onPressed: () => setState(() {
+                if (clickCounter == 0) return;
+
+                clickCounter--;
+              }),
             ),
           ],
         ));
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final IconData icon;
+
+  final VoidCallback? onPressed;
+
+  const CustomButton({
+    super.key,
+    required this.icon,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const StadiumBorder(),
+      onPressed: onPressed,
+      tooltip: 'Increment',
+      child: Icon(icon),
+    );
   }
 }
