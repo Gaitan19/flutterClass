@@ -10,7 +10,7 @@ class ChatProvider extends ChangeNotifier {
   List<Message> messageList = [];
 
   Future<void> himReply() async {
-    final himMessage = await getYesNoAnswer.getAnser();
+    final himMessage = await getYesNoAnswer.getAnswer();
 
     messageList.add(himMessage);
     notifyListeners();
