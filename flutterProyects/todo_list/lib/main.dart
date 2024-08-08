@@ -6,15 +6,34 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDarkMode = true;
+
+  void toggleTheme() {
+    setState(() {
+      isDarkMode = !isDarkMode;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 2).theme(),
-      home: const HomePage(),
+      theme: AppTheme(
+        selectedColor: 2,
+        brightness: isDarkMode ? Brightness.dark : Brightness.light,
+      ).theme(),
+      home: HomePage(
+        toggleTheme: toggleTheme,
+        isDarkMode: isDarkMode,
+      ),
     );
   }
 }

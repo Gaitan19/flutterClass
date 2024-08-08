@@ -12,9 +12,11 @@ const List<Color> _colorsThemes = [
 
 class AppTheme {
   final int selectedColor;
+  final Brightness brightness;
 
   AppTheme({
     this.selectedColor = 0,
+    this.brightness = Brightness.light,
   }) : assert(selectedColor >= 0 && selectedColor <= _colorsThemes.length - 1,
             '_ColorsThemes must be between 0 and ${_colorsThemes.length - 1}');
 
@@ -23,7 +25,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
         seedColor: _colorsThemes[selectedColor],
-        brightness: Brightness.dark,
+        brightness: brightness,
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: _colorsThemes[selectedColor],

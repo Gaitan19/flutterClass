@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({
+    super.key,
+    required this.toggleTheme,
+    required this.isDarkMode,
+  });
+
+  final VoidCallback toggleTheme;
+  final bool isDarkMode;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -41,6 +48,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Simple Todo'),
+        actions: [
+          IconButton(
+            icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
+            onPressed: widget.toggleTheme,
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: toDoList.length,
