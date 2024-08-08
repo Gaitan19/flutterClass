@@ -8,12 +8,8 @@ class GetYesNoAnswer {
   Future<Message> getAnser() async {
     final response = await _dio.get('https://yesno.wtf/api');
 
-    final yesNoModel = YesNoModel.fromJson(response.data);
+    final yesNoModel = YesNoModel.fromJsonMap(response.data);
 
-    return Message(
-      text: yesNoModel.answer,
-      imageUrl: yesNoModel.image,
-      fromWho: FromWho.him,
-    );
+    return yesNoModel.toMessageEntity();
   }
 }
