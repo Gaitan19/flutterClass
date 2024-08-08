@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 import 'package:todo_list/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,17 +19,34 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
-  List toDoList = [
-    ['Code With Otabek', true],
-    ['Learn Flutter', true],
-    ['Drink Coffee', false],
-    ['Explore Firebase', false],
-  ];
+  List toDoList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadToDoList();
+  }
+
+  void _loadToDoList() async {
+    final prefs = await SharedPreferences.getInstance();
+    final String? toDoListString = prefs.getString('toDoList');
+    if (toDoListString != null) {
+      setState(() {
+        toDoList = jsonDecode(toDoListString);
+      });
+    }
+  }
+
+  void _saveToDoList() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('toDoList', jsonEncode(toDoList));
+  }
 
   void checkBoxChanged(int index) {
     setState(() {
       toDoList[index][1] = !toDoList[index][1];
     });
+    _saveToDoList();
   }
 
   void saveNewTask() {
@@ -35,12 +54,14 @@ class _HomePageState extends State<HomePage> {
       toDoList.add([_controller.text, false]);
       _controller.clear();
     });
+    _saveToDoList();
   }
 
   void deleteTask(int index) {
     setState(() {
       toDoList.removeAt(index);
     });
+    _saveToDoList();
   }
 
   @override
@@ -55,33 +76,40 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: toDoList.length,
-        itemBuilder: (BuildContext context, index) {
-          return TodoList(
-            taskName: toDoList[index][0],
-            taskCompleted: toDoList[index][1],
-            onChanged: (value) => checkBoxChanged(index),
-            deleteFunction: (contex) => deleteTask(index),
-          );
-        },
-      ),
-      floatingActionButton: Row(
+      body: Column(
         children: [
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                controller: _controller,
-                decoration: const InputDecoration(
-                  hintText: 'Add a new todo item',
-                ),
-              ),
+            child: ListView.builder(
+              itemCount: toDoList.length,
+              itemBuilder: (BuildContext context, index) {
+                return TodoList(
+                  taskName: toDoList[index][0],
+                  taskCompleted: toDoList[index][1],
+                  onChanged: (value) => checkBoxChanged(index),
+                  deleteFunction: (context) => deleteTask(index),
+                );
+              },
             ),
           ),
-          FloatingActionButton(
-            onPressed: saveNewTask,
-            child: const Icon(Icons.add),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _controller,
+                    decoration: const InputDecoration(
+                      hintText: 'Add a new todo item',
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                FloatingActionButton(
+                  onPressed: saveNewTask,
+                  child: const Icon(Icons.add),
+                ),
+              ],
+            ),
           ),
         ],
       ),

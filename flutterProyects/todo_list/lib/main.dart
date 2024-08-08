@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isDarkMode = true;
+  bool isDarkMode = false;
 
   void toggleTheme() {
     setState(() {
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme(
-        selectedColor: 2,
+        selectedColor: 3,
         brightness: isDarkMode ? Brightness.dark : Brightness.light,
       ).theme(),
       home: HomePage(
