@@ -36,6 +36,8 @@ class _ChatView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
+            const SizedBox(height: 10),
+
             Expanded(
                 child: ListView.builder(
               controller: chatProvider.chatScrollController,

@@ -22,8 +22,13 @@ class AppTheme {
 
   ThemeData theme() {
     return ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: _colorsThemes[selectedColor],
-        brightness: Brightness.light);
+      useMaterial3: true,
+      colorSchemeSeed: _colorsThemes[selectedColor],
+      brightness: Brightness.light,
+      appBarTheme: AppBarTheme(
+        backgroundColor: _colorsThemes[selectedColor],
+        foregroundColor: Colors.white, // Color del texto y de los iconos
+      ),
+    );
   }
 }
