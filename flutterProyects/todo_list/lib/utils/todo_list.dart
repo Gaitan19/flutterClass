@@ -17,6 +17,7 @@ class TodoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.only(
         top: 20,
@@ -32,13 +33,15 @@ class TodoList extends StatelessWidget {
               onPressed: deleteFunction,
               icon: Icons.delete,
               borderRadius: BorderRadius.circular(15),
+              backgroundColor: theme.colorScheme.error,
+              foregroundColor: theme.colorScheme.onError,
             ),
           ],
         ),
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.deepPurple,
+            color: theme.colorScheme.primary,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Row(
@@ -46,22 +49,24 @@ class TodoList extends StatelessWidget {
               Checkbox(
                 value: taskCompleted,
                 onChanged: onChanged,
-                checkColor: Colors.black,
-                activeColor: Colors.white,
-                side: const BorderSide(
-                  color: Colors.white,
+                checkColor: theme.colorScheme.onPrimary,
+                activeColor: theme.colorScheme.primaryContainer,
+                side: BorderSide(
+                  color: theme.colorScheme.onPrimary,
                 ),
               ),
-              Text(
-                taskName,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  decoration: taskCompleted
-                      ? TextDecoration.lineThrough
-                      : TextDecoration.none,
-                  decorationColor: Colors.white,
-                  decorationThickness: 2,
+              Expanded(
+                child: Text(
+                  taskName,
+                  style: TextStyle(
+                    color: theme.colorScheme.onPrimary,
+                    fontSize: 18,
+                    decoration: taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                    decorationColor: theme.colorScheme.onPrimary,
+                    decorationThickness: 2,
+                  ),
                 ),
               ),
             ],

@@ -39,13 +39,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple.shade300,
       appBar: AppBar(
-        title: const Text(
-          'Simple Todo',
-        ),
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
+        title: const Text('Simple Todo'),
       ),
       body: ListView.builder(
         itemCount: toDoList.length,
@@ -58,43 +53,24 @@ class _HomePageState extends State<HomePage> {
           );
         },
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
-                child: TextField(
-                  controller: _controller,
-                  decoration: InputDecoration(
-                    hintText: 'Add a new todo items',
-                    filled: true,
-                    fillColor: Colors.deepPurple.shade200,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                      ),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Colors.deepPurple,
-                      ),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
+      floatingActionButton: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                controller: _controller,
+                decoration: const InputDecoration(
+                  hintText: 'Add a new todo item',
                 ),
               ),
             ),
-            FloatingActionButton(
-              onPressed: saveNewTask,
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
+          ),
+          FloatingActionButton(
+            onPressed: saveNewTask,
+            child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
