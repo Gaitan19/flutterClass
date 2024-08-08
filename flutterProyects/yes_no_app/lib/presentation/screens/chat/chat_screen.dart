@@ -47,7 +47,9 @@ class _ChatView extends StatelessWidget {
                     ? MyMessageBubble(
                         message: message,
                       )
-                    : HimMessageBubble();
+                    : HimMessageBubble(
+                        message: message,
+                      );
               },
             )),
             // caja de texto de mensajes
