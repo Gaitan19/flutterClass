@@ -44,7 +44,7 @@ class _ChatView extends StatelessWidget {
 
             const MessageFieldBox(),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
           ],
         ),
       ),
