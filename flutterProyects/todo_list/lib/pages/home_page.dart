@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list/presentation/providers/todo_provider.dart';
+import 'package:todo_list/presentation/widgets/share/message_field_box.dart';
 import 'package:todo_list/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -63,25 +64,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _controller,
-                          decoration: const InputDecoration(
-                            hintText: 'Add a new todo item',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      FloatingActionButton(
-                        onPressed: () {
-                          todoProvider.addTask(_controller.text);
-                          _controller.clear();
-                        },
-                        child: const Icon(Icons.add),
-                      ),
-                    ],
+                  child: MessageFieldBox(
+                    controller: _controller,
+                    onPressed: () {
+                      todoProvider.addTask(_controller.text);
+                      _controller.clear();
+                    },
                   ),
                 ),
               ],
