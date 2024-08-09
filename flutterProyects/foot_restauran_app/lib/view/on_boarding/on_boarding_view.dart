@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
 import 'package:foot_restauran_app/common_widget/round_button.dart';
+import 'package:foot_restauran_app/view/login/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -106,7 +107,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             children: [
               RoundButton(
                 title: "Login",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginView()));
+                },
               ),
               SizedBox(
                 height: media.width * 0.1,
