@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:todo_list/presentation/widgets/share/check_box.dart';
 
 class TodoList extends StatelessWidget {
   const TodoList({
@@ -18,6 +19,7 @@ class TodoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(
         top: 20,
@@ -44,32 +46,10 @@ class TodoList extends StatelessWidget {
             color: theme.colorScheme.primary,
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Row(
-            children: [
-              Checkbox(
-                value: taskCompleted,
-                onChanged: onChanged,
-                checkColor: theme.colorScheme.onPrimary,
-                activeColor: theme.colorScheme.primaryContainer,
-                side: BorderSide(
-                  color: theme.colorScheme.onPrimary,
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  taskName,
-                  style: TextStyle(
-                    color: theme.colorScheme.onPrimary,
-                    fontSize: 18,
-                    decoration: taskCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
-                    decorationColor: theme.colorScheme.onPrimary,
-                    decorationThickness: 2,
-                  ),
-                ),
-              ),
-            ],
+          child: CustomCheckbox(
+            taskName: taskName,
+            taskCompleted: taskCompleted,
+            onChanged: onChanged,
           ),
         ),
       ),
