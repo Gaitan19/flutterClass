@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common_widget/collection_food_item_cell.dart';
 import 'package:foot_restauran_app/common_widget/food_item_cell.dart';
 import 'package:foot_restauran_app/common_widget/line_textfield.dart';
 import 'package:foot_restauran_app/common_widget/round_button.dart';
 import 'package:foot_restauran_app/common_widget/selection_text_view.dart';
+import 'package:foot_restauran_app/view/home/collection_list_view.dart';
 import 'package:foot_restauran_app/view/home/search_location_view.dart';
+import 'package:foot_restauran_app/view/home/trending_list_view.dart';
 import 'package:foot_restauran_app/view/restaurant/restaurant_detail_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -206,70 +209,70 @@ class _HomeViewState extends State<HomeView> {
                           }),
                     ),
 
-                    //TODO: Trending this week
-                    // SelectionTextView(
-                    //   title: "Trending this week",
-                    //   onSeeAllTap: () {
-                    //     Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(
-                    //             builder: (context) =>
-                    //                 const TrendingListView()));
-                    //   },
-                    // ),
+                    // TODO: Trending this week
+                    SelectionTextView(
+                      title: "Trending this week",
+                      onSeeAllTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const TrendingListView()));
+                      },
+                    ),
 
-                    // SizedBox(
-                    //   height: media.width * 0.48,
-                    //   child: ListView.builder(
-                    //       scrollDirection: Axis.horizontal,
-                    //       padding: const EdgeInsets.symmetric(horizontal: 8),
-                    //       itemCount: trendingArr.length,
-                    //       itemBuilder: (context, index) {
-                    //         var fObj = trendingArr[index] as Map? ?? {};
+                    SizedBox(
+                      height: media.width * 0.48,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          itemCount: trendingArr.length,
+                          itemBuilder: (context, index) {
+                            var fObj = trendingArr[index] as Map? ?? {};
 
-                    //         return GestureDetector(
-                    //           onTap: () {
-                    //             Navigator.push(
-                    //                 context,
-                    //                 MaterialPageRoute(
-                    //                     builder: (context) =>
-                    //                         RestaurantDetailView(
-                    //                           fObj: fObj,
-                    //                         )));
-                    //           },
-                    //           child: FoodItemCell(
-                    //             fObj: fObj,
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            RestaurantDetailView(
+                                              fObj: fObj,
+                                            )));
+                              },
+                              child: FoodItemCell(
+                                fObj: fObj,
+                              ),
+                            );
+                          }),
+                    ),
 
-                    //TODO: Collections by Capi
-                    // SelectionTextView(
-                    //   title: "Collections by Capi",
-                    //   onSeeAllTap: () {
-                    //     Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(
-                    //             builder: (context) =>
-                    //                 const CollectionListView()));
-                    //   },
-                    // ),
+                    // TODO: Collections by Capi
+                    SelectionTextView(
+                      title: "Collections by Capi",
+                      onSeeAllTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const CollectionListView()));
+                      },
+                    ),
 
-                    // SizedBox(
-                    //   height: media.width * 0.6,
-                    //   child: ListView.builder(
-                    //       scrollDirection: Axis.horizontal,
-                    //       padding: const EdgeInsets.symmetric(horizontal: 8),
-                    //       itemCount: collectionsArr.length,
-                    //       itemBuilder: (context, index) {
-                    //         var fObj = collectionsArr[index] as Map? ?? {};
+                    SizedBox(
+                      height: media.width * 0.6,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          itemCount: collectionsArr.length,
+                          itemBuilder: (context, index) {
+                            var fObj = collectionsArr[index] as Map? ?? {};
 
-                    //         return CollectionFoodItemCell(
-                    //           fObj: fObj,
-                    //         );
-                    //       }),
-                    // ),
+                            return CollectionFoodItemCell(
+                              fObj: fObj,
+                            );
+                          }),
+                    ),
 
                     //TODO: Favorite Cuisines
                     // SelectionTextView(
