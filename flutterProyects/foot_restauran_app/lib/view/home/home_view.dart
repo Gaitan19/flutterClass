@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
 import 'package:foot_restauran_app/common_widget/collection_food_item_cell.dart';
+import 'package:foot_restauran_app/common_widget/favorite_food_item_cell.dart';
 import 'package:foot_restauran_app/common_widget/food_item_cell.dart';
 import 'package:foot_restauran_app/common_widget/line_textfield.dart';
+import 'package:foot_restauran_app/common_widget/popular_food_item_cell.dart';
 import 'package:foot_restauran_app/common_widget/round_button.dart';
 import 'package:foot_restauran_app/common_widget/selection_text_view.dart';
 import 'package:foot_restauran_app/view/home/collection_list_view.dart';
+import 'package:foot_restauran_app/view/home/outlet_list_view.dart';
 import 'package:foot_restauran_app/view/home/search_location_view.dart';
 import 'package:foot_restauran_app/view/home/trending_list_view.dart';
 import 'package:foot_restauran_app/view/restaurant/restaurant_detail_view.dart';
@@ -274,69 +277,69 @@ class _HomeViewState extends State<HomeView> {
                           }),
                     ),
 
-                    //TODO: Favorite Cuisines
-                    // SelectionTextView(
-                    //   title: "Favorite Cuisines",
-                    //   onSeeAllTap: () {},
-                    // ),
+                    // TODO: Favorite Cuisines
+                    SelectionTextView(
+                      title: "Favorite Cuisines",
+                      onSeeAllTap: () {},
+                    ),
 
-                    // SizedBox(
-                    //   height: media.width * 0.47,
-                    //   child: GridView.builder(
-                    //       padding: const EdgeInsets.symmetric(horizontal: 15),
-                    //       scrollDirection: Axis.horizontal,
-                    //       gridDelegate:
-                    //           const SliverGridDelegateWithFixedCrossAxisCount(
-                    //               crossAxisCount: 2,
-                    //               childAspectRatio: 0.55,
-                    //               crossAxisSpacing: 15,
-                    //               mainAxisSpacing: 15),
-                    //       itemCount: favoriteArr.length,
-                    //       itemBuilder: (context, index) {
-                    //         var fObj = favoriteArr[index] as Map? ?? {};
+                    SizedBox(
+                      height: media.width * 0.47,
+                      child: GridView.builder(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          scrollDirection: Axis.horizontal,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  childAspectRatio: 0.55,
+                                  crossAxisSpacing: 15,
+                                  mainAxisSpacing: 15),
+                          itemCount: favoriteArr.length,
+                          itemBuilder: (context, index) {
+                            var fObj = favoriteArr[index] as Map? ?? {};
 
-                    //         return FavoriteFoodItemCell(
-                    //           fObj: fObj,
-                    //           index: index,
-                    //         );
-                    //       }),
-                    // ),
+                            return FavoriteFoodItemCell(
+                              fObj: fObj,
+                              index: index,
+                            );
+                          }),
+                    ),
 
                     //TODO: Popular brands
-                    // SelectionTextView(
-                    //   title: "Popular brands",
-                    //   onSeeAllTap: () {},
-                    // ),
+                    SelectionTextView(
+                      title: "Popular brands",
+                      onSeeAllTap: () {},
+                    ),
 
-                    // SizedBox(
-                    //   height: media.width * 0.42,
-                    //   child: ListView.builder(
-                    //       scrollDirection: Axis.horizontal,
-                    //       padding: const EdgeInsets.symmetric(horizontal: 8),
-                    //       itemCount: popularArr.length,
-                    //       itemBuilder: (context, index) {
-                    //         var fObj = popularArr[index] as Map? ?? {};
+                    SizedBox(
+                      height: media.width * 0.42,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          itemCount: popularArr.length,
+                          itemBuilder: (context, index) {
+                            var fObj = popularArr[index] as Map? ?? {};
 
-                    //         return GestureDetector(
-                    //           onTap: () {
-                    //             Navigator.push(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                   builder: (context) =>
-                    //                       OutletListView(fObj: fObj)),
-                    //             );
-                    //           },
-                    //           child: PopularFoodItemCell(
-                    //             fObj: fObj,
-                    //             index: index,
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          OutletListView(fObj: fObj)),
+                                );
+                              },
+                              child: PopularFoodItemCell(
+                                fObj: fObj,
+                                index: index,
+                              ),
+                            );
+                          }),
+                    ),
 
-                    // const SizedBox(
-                    //   height: 15,
-                    // )
+                    const SizedBox(
+                      height: 15,
+                    )
                   ],
                 ),
               ))
