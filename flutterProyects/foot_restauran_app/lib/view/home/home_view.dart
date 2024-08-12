@@ -5,6 +5,7 @@ import 'package:foot_restauran_app/common_widget/line_textfield.dart';
 import 'package:foot_restauran_app/common_widget/round_button.dart';
 import 'package:foot_restauran_app/common_widget/selection_text_view.dart';
 import 'package:foot_restauran_app/view/home/search_location_view.dart';
+import 'package:foot_restauran_app/view/restaurant/restaurant_detail_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -179,31 +180,31 @@ class _HomeViewState extends State<HomeView> {
                       title: "Legendary food",
                       onSeeAllTap: () {},
                     ),
-                    // SizedBox(
-                    //   height: media.width * 0.48,
-                    //   child: ListView.builder(
-                    //       scrollDirection: Axis.horizontal,
-                    //       padding: const EdgeInsets.symmetric(horizontal: 8),
-                    //       itemCount: legendaryArr.length,
-                    //       itemBuilder: (context, index) {
-                    //         var fObj = legendaryArr[index] as Map? ?? {};
+                    SizedBox(
+                      height: media.width * 0.48,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 7),
+                          itemCount: legendaryArr.length,
+                          itemBuilder: (context, index) {
+                            var fObj = legendaryArr[index] as Map? ?? {};
 
-                    //         return GestureDetector(
-                    //           onTap: () {
-                    //             Navigator.push(
-                    //                 context,
-                    //                 MaterialPageRoute(
-                    //                     builder: (context) =>
-                    //                         RestaurantDetailView(
-                    //                           fObj: fObj,
-                    //                         )));
-                    //           },
-                    //           child: FoodItemCell(
-                    //             fObj: fObj,
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            RestaurantDetailView(
+                                              fObj: fObj,
+                                            )));
+                              },
+                              child: FoodItemCell(
+                                fObj: fObj,
+                              ),
+                            );
+                          }),
+                    ),
 
                     //TODO: Trending this week
                     // SelectionTextView(
@@ -271,10 +272,10 @@ class _HomeViewState extends State<HomeView> {
                     // ),
 
                     //TODO: Favorite Cuisines
-                    SelectionTextView(
-                      title: "Favorite Cuisines",
-                      onSeeAllTap: () {},
-                    ),
+                    // SelectionTextView(
+                    //   title: "Favorite Cuisines",
+                    //   onSeeAllTap: () {},
+                    // ),
 
                     // SizedBox(
                     //   height: media.width * 0.47,
@@ -299,10 +300,10 @@ class _HomeViewState extends State<HomeView> {
                     // ),
 
                     //TODO: Popular brands
-                    SelectionTextView(
-                      title: "Popular brands",
-                      onSeeAllTap: () {},
-                    ),
+                    // SelectionTextView(
+                    //   title: "Popular brands",
+                    //   onSeeAllTap: () {},
+                    // ),
 
                     // SizedBox(
                     //   height: media.width * 0.42,
@@ -330,9 +331,9 @@ class _HomeViewState extends State<HomeView> {
                     //       }),
                     // ),
 
-                    const SizedBox(
-                      height: 15,
-                    )
+                    // const SizedBox(
+                    //   height: 15,
+                    // )
                   ],
                 ),
               ))

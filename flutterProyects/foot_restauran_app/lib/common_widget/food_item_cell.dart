@@ -27,7 +27,7 @@ class FoodItemCell extends StatelessWidget {
             child: Container(
               color: TColor.secondary,
               width: media.width * 0.4,
-              height: media.width * 0.25,
+              height: media.width * 0.22,
               child: Image.asset(
                 fObj["image"].toString(),
                 fit: BoxFit.cover,
@@ -44,7 +44,7 @@ class FoodItemCell extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: TColor.text,
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.w700),
               ),
               const SizedBox(
@@ -56,7 +56,7 @@ class FoodItemCell extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: TColor.gray,
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: FontWeight.w700),
               ),
               const SizedBox(
