@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/view/main_tab/main_tab_view.dart';
 import '../../common_widget/round_button.dart';
 
 class OtpView extends StatefulWidget {
@@ -78,7 +79,14 @@ class _OtpViewState extends State<OtpView> {
               RoundButton(
                 title: "Verify Now",
                 type: RoundButtonType.primary,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              const MainTabView()),
+                      (route) => true);
+                },
               ),
             ],
           ),
