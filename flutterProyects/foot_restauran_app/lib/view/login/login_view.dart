@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common/extension.dart';
 import 'package:foot_restauran_app/common_widget/line_textfield.dart';
 import 'package:foot_restauran_app/common_widget/round_button.dart';
+import 'package:foot_restauran_app/view/login/forgot_password_view.dart';
+import 'package:foot_restauran_app/view/login/otp_view.dart';
+import 'package:foot_restauran_app/view/login/signup_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -53,7 +57,11 @@ class _LoginViewState extends State<LoginView> {
                 SizedBox(
                   height: media.width * 0.07,
                 ),
-                LineTextField(controller: txtEmail, hitText: "Email"),
+                LineTextField(
+                  controller: txtEmail,
+                  hitText: "Email",
+                  keyboardType: TextInputType.emailAddress,
+                ),
                 SizedBox(
                   height: media.width * 0.07,
                 ),
@@ -69,7 +77,15 @@ class _LoginViewState extends State<LoginView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ForgotPasswordView()));
+
+                          endEditing();
+                        },
                         child: Text(
                           "Forgot Password?",
                           textAlign: TextAlign.center,
@@ -85,7 +101,13 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 RoundButton(
                   title: "Login",
-                  onPressed: () {},
+                  onPressed: () async {
+                    await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OtpView()));
+                    endEditing();
+                  },
                   type: RoundButtonType.primary,
                 ),
                 SizedBox(
@@ -106,7 +128,14 @@ class _LoginViewState extends State<LoginView> {
                       width: 8,
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpView()));
+
+                          endEditing();
+                        },
                         child: Text(
                           "Signup",
                           textAlign: TextAlign.center,
