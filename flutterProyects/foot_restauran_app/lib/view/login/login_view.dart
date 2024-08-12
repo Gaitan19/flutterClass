@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common_widget/line_textfield.dart';
+import 'package:foot_restauran_app/common_widget/round_button.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -9,6 +11,10 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  TextEditingController txtEmail = TextEditingController();
+
+  TextEditingController txtPassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -44,6 +50,41 @@ class _LoginViewState extends State<LoginView> {
                       fontSize: 16,
                       fontWeight: FontWeight.w700),
                 ),
+                SizedBox(
+                  height: media.width * 0.07,
+                ),
+                LineTextfield(controller: txtEmail, hitText: "Email"),
+                SizedBox(
+                  height: media.width * 0.07,
+                ),
+                LineTextfield(
+                  controller: txtPassword,
+                  hitText: "Password",
+                  obscureText: true,
+                ),
+                SizedBox(
+                  height: media.width * 0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Forgot Password?",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: TColor.primary,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        )),
+                  ],
+                ),
+                RoundButton(
+                  title: "Login",
+                  onPressed: () {},
+                  type: RoundButtonType.primary,
+                )
               ],
             ),
           ),
