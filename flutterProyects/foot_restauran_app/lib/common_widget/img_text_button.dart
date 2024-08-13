@@ -27,8 +27,8 @@ class ImgTextButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
             child: Image.asset(
               image,
-              width: media.width * 0.19,
-              height: media.width * 0.19,
+              width: media.width * 0.18,
+              height: media.width * 0.18,
               fit: BoxFit.cover,
             ),
           ),
