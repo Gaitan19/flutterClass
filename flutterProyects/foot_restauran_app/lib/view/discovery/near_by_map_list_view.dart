@@ -230,6 +230,7 @@ class _NearByMapListViewState extends State<NearByMapListView> {
               pinned: false,
               floating: true,
               primary: false,
+              automaticallyImplyLeading: false,
               expandedHeight: 90,
               flexibleSpace: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),

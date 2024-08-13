@@ -64,6 +64,7 @@ class _DiscoveryViewState extends State<DiscoveryView> {
               floating: false,
               centerTitle: false,
               leadingWidth: 0,
+              automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   Image.asset(
