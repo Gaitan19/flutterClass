@@ -329,18 +329,18 @@ class _RestaurantDetailViewState extends State<RestaurantDetailView> {
                                         const PhotoListView()));
                           },
                         ),
-                        ImgTextButton(
-                          title: "Menu",
-                          subTitle: "(10)",
-                          image: "assets/img/c3.png",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PhotoListView()));
-                          },
-                        ),
+                        // ImgTextButton(
+                        //   title: "Menu",
+                        //   subTitle: "(10)",
+                        //   image: "assets/img/c3.png",
+                        //   onPressed: () {
+                        //     Navigator.push(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: (context) =>
+                        //                 const PhotoListView()));
+                        //   },
+                        // ),
                         ImgTextButton(
                           title: "All Photos",
                           subTitle: "(115)",
