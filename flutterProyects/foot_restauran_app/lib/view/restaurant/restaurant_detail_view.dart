@@ -302,58 +302,61 @@ class _RestaurantDetailViewState extends State<RestaurantDetailView> {
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ImgTextButton(
-                          title: "Food",
-                          subTitle: "(80)",
-                          image: "assets/img/c1.png",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PhotoListView()));
-                          },
-                        ),
-                        ImgTextButton(
-                          title: "Ambience",
-                          subTitle: "(25)",
-                          image: "assets/img/c2.png",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PhotoListView()));
-                          },
-                        ),
-                        // ImgTextButton(
-                        //   title: "Menu",
-                        //   subTitle: "(10)",
-                        //   image: "assets/img/c3.png",
-                        //   onPressed: () {
-                        //     Navigator.push(
-                        //         context,
-                        //         MaterialPageRoute(
-                        //             builder: (context) =>
-                        //                 const PhotoListView()));
-                        //   },
-                        // ),
-                        ImgTextButton(
-                          title: "All Photos",
-                          subTitle: "(115)",
-                          image: "assets/img/l1.png",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PhotoListView()));
-                          },
-                        ),
-                      ],
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ImgTextButton(
+                            title: "Food",
+                            subTitle: "(80)",
+                            image: "assets/img/c1.png",
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PhotoListView()));
+                            },
+                          ),
+                          ImgTextButton(
+                            title: "Ambience",
+                            subTitle: "(25)",
+                            image: "assets/img/c2.png",
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PhotoListView()));
+                            },
+                          ),
+                          ImgTextButton(
+                            title: "Menu",
+                            subTitle: "(10)",
+                            image: "assets/img/c3.png",
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PhotoListView()));
+                            },
+                          ),
+                          ImgTextButton(
+                            title: "All Photos",
+                            subTitle: "(115)",
+                            image: "assets/img/l1.png",
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PhotoListView()));
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
