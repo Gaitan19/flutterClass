@@ -101,9 +101,7 @@ class UserReviewRow extends StatelessWidget {
                   Icons.star,
                   color: TColor.primary,
                 ),
-                onRatingUpdate: (rating) {
-                  print(rating);
-                },
+                onRatingUpdate: (rating) {},
               ),
             ),
             Text(

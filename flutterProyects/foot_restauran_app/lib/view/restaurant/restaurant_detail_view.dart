@@ -472,7 +472,7 @@ class _RestaurantDetailViewState extends State<RestaurantDetailView> {
                     shrinkWrap: true,
                     itemCount: 3,
                     itemBuilder: ((context, index) {
-                      return UserReviewRow();
+                      return const UserReviewRow();
                     })),
 
                 Divider(
