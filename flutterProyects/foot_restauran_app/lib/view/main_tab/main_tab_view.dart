@@ -35,7 +35,7 @@ class _MainTabViewState extends State<MainTabView>
       body: TabBarView(controller: controller, children: const [
         HomeView(),
         DiscoveryView(),
-        BookmakView(),
+        BookmarkView(),
         TopFoodieView(),
         MyProfileView(),
       ]),
