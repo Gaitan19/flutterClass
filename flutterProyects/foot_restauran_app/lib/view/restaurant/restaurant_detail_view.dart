@@ -615,7 +615,20 @@ class _RestaurantDetailViewState extends State<RestaurantDetailView> {
                 expandedHeight: media.width * 0.667,
                 floating: false,
                 centerTitle: false,
-                automaticallyImplyLeading: false,
+
+                leading: IconButton(
+                  icon: Image.asset(
+                    "assets/img/back.png",
+                    width: 24,
+                    height: 30,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+
+                // automaticallyImplyLeading: false,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Container(
                     width: media.width,
@@ -643,21 +656,6 @@ class _RestaurantDetailViewState extends State<RestaurantDetailView> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                             ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 20,
-                          left: 10,
-                          child: IconButton(
-                            icon: Image.asset(
-                              "assets/img/back.png",
-                              width: 24,
-                              height: 30,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
                           ),
                         ),
                       ],

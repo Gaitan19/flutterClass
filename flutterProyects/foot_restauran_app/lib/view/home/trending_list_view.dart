@@ -278,6 +278,17 @@ class _TrendingListViewState extends State<TrendingListView> {
               expandedHeight: media.width * 0.667,
               floating: false,
               centerTitle: false,
+              leading: IconButton(
+                icon: Image.asset(
+                  "assets/img/back.png",
+                  width: 24,
+                  height: 30,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
                   width: media.width,
@@ -315,21 +326,6 @@ class _TrendingListViewState extends State<TrendingListView> {
                               color: Colors.white,
                               fontSize: 25,
                               fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                      Positioned(
-                        top: 20,
-                        left: 10,
-                        child: IconButton(
-                          icon: Image.asset(
-                            "assets/img/back.png",
-                            width: 24,
-                            height: 30,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
                         ),
                       ),
                     ],
