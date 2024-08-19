@@ -85,6 +85,7 @@ class _MyNetworkViewState extends State<MyNetworkView> {
               floating: false,
               centerTitle: false,
               leadingWidth: 0,
+              automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   IconButton(

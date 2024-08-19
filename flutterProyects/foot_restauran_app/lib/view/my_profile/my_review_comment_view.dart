@@ -29,6 +29,7 @@ class _MyReviewCommentViewState extends State<MyReviewCommentView> {
               floating: false,
               centerTitle: false,
               leadingWidth: 0,
+              automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   IconButton(
