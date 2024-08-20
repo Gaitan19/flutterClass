@@ -55,6 +55,7 @@ class _PhotoListViewState extends State<PhotoListView> {
               floating: false,
               centerTitle: false,
               leadingWidth: 0,
+              automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   IconButton(

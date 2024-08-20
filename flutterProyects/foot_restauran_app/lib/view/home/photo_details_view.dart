@@ -28,6 +28,7 @@ class _PhotoDetailsViewState extends State<PhotoDetailsView> {
               floating: false,
               centerTitle: false,
               leadingWidth: 0,
+              automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   IconButton(
