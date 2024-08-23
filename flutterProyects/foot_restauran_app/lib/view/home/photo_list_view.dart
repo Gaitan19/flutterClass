@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common/common_data.dart';
 import 'package:foot_restauran_app/common_widget/popup_layout.dart';
 import 'package:foot_restauran_app/common_widget/selection_button.dart';
 import 'package:foot_restauran_app/common_widget/user_photo_row.dart';
@@ -17,29 +18,6 @@ class PhotoListView extends StatefulWidget {
 class _PhotoListViewState extends State<PhotoListView> {
   var selectTab = 0;
   var isGrid = true;
-
-  List imgArr = [
-    "assets/img/l1.png",
-    "assets/img/l2.png",
-    "assets/img/l3.png",
-    "assets/img/l4.png",
-    "assets/img/l5.png",
-    "assets/img/l1.png",
-    "assets/img/l2.png",
-    "assets/img/l3.png",
-    "assets/img/l4.png",
-    "assets/img/l5.png",
-    "assets/img/l1.png",
-    "assets/img/l2.png",
-    "assets/img/l3.png",
-    "assets/img/l4.png",
-    "assets/img/l5.png",
-    "assets/img/l1.png",
-    "assets/img/l2.png",
-    "assets/img/l3.png",
-    "assets/img/l4.png",
-    "assets/img/l5.png"
-  ];
 
   @override
   Widget build(BuildContext context) {

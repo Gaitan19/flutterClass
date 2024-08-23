@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common/common_data.dart';
 import 'package:foot_restauran_app/common_widget/outlet_list_row.dart';
 
 import '../../common_widget/popup_layout.dart';
@@ -14,57 +15,6 @@ class OutletListView extends StatefulWidget {
 }
 
 class _OutletListViewState extends State<OutletListView> {
-  List outletArr = [
-    {
-      "name": "Lombar Pizza",
-      "address": "East 46th Street",
-      "category": "Pizza, Italian",
-      "image": "assets/img/l1.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 4.8
-    },
-    {
-      "name": "Sushi Bar",
-      "address": "210 Salt Pond Rd.",
-      "category": "Sushi, Japan",
-      "image": "assets/img/l2.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 3.8
-    },
-    {
-      "name": "Steak House",
-      "address": "East 46th Street",
-      "category": "Steak, American",
-      "image": "assets/img/l3.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 2.8
-    },
-    {
-      "name": "Seafood Lee",
-      "address": "210 Salt Pond Rd.",
-      "category": "Seafood, Spain",
-      "image": "assets/img/t1.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 5.0
-    },
-    {
-      "name": "Egg Tomato",
-      "address": "East 46th Street",
-      "category": "Egg, Italian",
-      "image": "assets/img/t2.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 4.8
-    },
-    {
-      "name": "Burger Hot",
-      "address": "East 46th Street",
-      "category": "Pizza, Italian",
-      "image": "assets/img/t3.png",
-      "time": "11:30AM to 11:00PM",
-      "rate": 4.8
-    }
-  ];
-
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot_restauran_app/common/color_extenstion.dart';
+import 'package:foot_restauran_app/common/common_data.dart';
 
 class LikeUserListView extends StatefulWidget {
   const LikeUserListView({super.key});
@@ -10,37 +11,6 @@ class LikeUserListView extends StatefulWidget {
 
 class _LikeUserListViewState extends State<LikeUserListView> {
   TextEditingController txtComment = TextEditingController();
-
-  List likeArr = [
-    {
-      "image": "assets/img/u1.png",
-      "name": "Hibe Neted",
-      "is_follow": "1",
-      "reviews": "45",
-      "followers": "201"
-    },
-    {
-      "image": "assets/img/u2.png",
-      "name": "Lija Paltala",
-      "is_follow": "0",
-      "reviews": "50",
-      "followers": "75"
-    },
-    {
-      "image": "assets/img/u1.png",
-      "name": "Hibe Neted",
-      "is_follow": "1",
-      "reviews": "45",
-      "followers": "201"
-    },
-    {
-      "image": "assets/img/u2.png",
-      "name": "Natalia Sonz",
-      "is_follow": "1",
-      "reviews": "45",
-      "followers": "201"
-    }
-  ];
 
   @override
   Widget build(BuildContext context) {
