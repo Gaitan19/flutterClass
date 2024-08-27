@@ -38,4 +38,10 @@ class TodoProvider extends ChangeNotifier {
     saveToDoList();
     notifyListeners();
   }
+
+  void editTask(int index, String newTaskName) {
+    _toDoList[index][0] = newTaskName;
+    saveToDoList();
+    notifyListeners();
+  }
 }

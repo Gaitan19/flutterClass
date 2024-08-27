@@ -9,12 +9,14 @@ class TodoList extends StatelessWidget {
     required this.taskCompleted,
     required this.onChanged,
     required this.deleteFunction,
+    required this.editFunction,
   });
 
   final String taskName;
   final bool taskCompleted;
   final Function(bool?)? onChanged;
   final Function(BuildContext)? deleteFunction;
+  final Function(BuildContext)? editFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,13 @@ class TodoList extends StatelessWidget {
         endActionPane: ActionPane(
           motion: const StretchMotion(),
           children: [
+            SlidableAction(
+              onPressed: editFunction,
+              icon: Icons.edit,
+              borderRadius: BorderRadius.circular(15),
+              backgroundColor: theme.colorScheme.secondary,
+              foregroundColor: theme.colorScheme.onSecondary,
+            ),
             SlidableAction(
               onPressed: deleteFunction,
               icon: Icons.delete,
