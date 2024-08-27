@@ -58,6 +58,8 @@ class _HomePageState extends State<HomePage> {
                         onChanged: (value) => todoProvider.toggleTask(index),
                         deleteFunction: (context) =>
                             todoProvider.deleteTask(index),
+                        editFunction: (context) =>
+                            _showEditDialog(context, index),
                       );
                     },
                   ),
@@ -77,6 +79,35 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
+    );
+  }
+
+  void _showEditDialog(BuildContext context, int index) {
+    final todoProvider = Provider.of<TodoProvider>(context, listen: false);
+    final taskController = TextEditingController(
+      text: todoProvider.toDoList[index][0],
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Edit Task'),
+          content: TextField(
+            controller: taskController,
+            decoration: const InputDecoration(hintText: 'Task name'),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                todoProvider.editTask(index, taskController.text);
+                Navigator.of(context).pop();
+              },
+              child: const Text('Save'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
