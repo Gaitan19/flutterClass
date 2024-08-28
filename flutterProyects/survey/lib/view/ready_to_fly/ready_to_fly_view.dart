@@ -19,6 +19,11 @@ class ReadyToFlyView extends StatelessWidget {
                 Column(
                   children: [
                     const SizedBox(height: 20),
+                    Image.asset(
+                      'assets/img/birdie_logo.png',
+                      height: 60,
+                      color: TColor.primaryText,
+                    ),
                     const SizedBox(height: 20),
                     Text(
                       "YOU'RE READY TO FLY!",
@@ -36,6 +41,7 @@ class ReadyToFlyView extends StatelessWidget {
                     ),
                   ],
                 ),
+                // Puedes agregar aquí cualquier otro elemento al final de la pantalla, como la ilustración de las olas si es necesario.
               ],
             ),
           ),
