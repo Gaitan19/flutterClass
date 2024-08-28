@@ -17,21 +17,29 @@ class ReadyToFlyView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: 76),
                     const SizedBox(height: 20),
                     Image.asset(
                       'assets/img/birdie_logo.png',
                       height: 60,
-                      color: TColor.primaryText,
+                      // color: TColor.primaryText,
                     ),
-                    const SizedBox(height: 20),
-                    Text(
-                      "YOU'RE READY TO FLY!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: TColor.primaryText,
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
+                    const SizedBox(height: 54),
+                    SizedBox(
+                      width: 300.19,
+                      child: Text(
+                        "you’re ready to fly!".toUpperCase(),
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: TColor.text,
+                          fontSize: 56.4,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'LemonMilkPro',
+                          height: 60.33 / 56.4,
+                          letterSpacing: 0.015 * 56.4,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 50),
@@ -41,7 +49,6 @@ class ReadyToFlyView extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Puedes agregar aquí cualquier otro elemento al final de la pantalla, como la ilustración de las olas si es necesario.
               ],
             ),
           ),
