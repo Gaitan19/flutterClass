@@ -7,51 +7,76 @@ class ReadyToFlyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> waveImages = [
+      'assets/img/wave_1.png',
+      'assets/img/wave_2.png',
+      'assets/img/wave_3.png',
+      'assets/img/wave_4.png',
+      'assets/img/wave_5.png',
+    ];
+
     return Scaffold(
       backgroundColor: TColor.primary,
       body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
+        child: Stack(
+          children: [
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 76),
-                    const SizedBox(height: 20),
-                    Image.asset(
-                      'assets/img/birdie_logo.png',
-                      height: 60,
-                      // color: TColor.primaryText,
-                    ),
-                    const SizedBox(height: 54),
-                    SizedBox(
-                      width: 300.19,
-                      child: Text(
-                        "you’re ready to fly!".toUpperCase(),
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: TColor.text,
-                          fontSize: 56.4,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'LemonMilkPro',
-                          height: 60.33 / 56.4,
-                          letterSpacing: 0.015 * 56.4,
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 76),
+                        Image.asset(
+                          'assets/img/birdie_logo.png',
+                          height: 60,
                         ),
-                      ),
+                        const SizedBox(height: 54),
+                        SizedBox(
+                          width: 300.19,
+                          child: Text(
+                            "you’re ready to fly!".toUpperCase(),
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: TColor.text,
+                              fontSize: 56.4,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'LemonMilkPro',
+                              height: 60.33 / 56.4,
+                              letterSpacing: 0.015 * 56.4,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 50),
+                        const OutlineButton(
+                          text: 'CONTINUE',
+                          hasBackground: false,
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 50),
-                    const OutlineButton(
-                      text: 'CONTINUE',
-                      hasBackground: false,
-                    ),
-                  ],
+                  ),
                 ),
               ],
             ),
-          ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: waveImages.map((image) {
+                  return Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  );
+                }).toList(),
+              ),
+            )
+          ],
         ),
       ),
     );

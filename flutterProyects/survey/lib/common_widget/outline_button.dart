@@ -14,6 +14,7 @@ class OutlineButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
       decoration: BoxDecoration(
         color: hasBackground ? TColor.primaryText : Colors.transparent,
@@ -22,10 +23,14 @@ class OutlineButton extends StatelessWidget {
       ),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: TextStyle(
           color: hasBackground ? TColor.primary : TColor.primaryText,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          fontWeight: FontWeight.w300,
+          fontFamily: 'LemonMilkPro',
+          height: 26 / 15,
+          letterSpacing: 5,
         ),
       ),
     );
