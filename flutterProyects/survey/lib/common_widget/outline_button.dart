@@ -4,23 +4,28 @@ import 'package:survey/common/color_extenstion.dart';
 class OutlineButton extends StatelessWidget {
   final String text;
   final bool hasBackground;
+  final VoidCallback onPressed;
 
   const OutlineButton({
     super.key,
     required this.text,
+    required this.onPressed,
     this.hasBackground = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-      decoration: BoxDecoration(
-        color: hasBackground ? TColor.primaryText : Colors.transparent,
-        border: Border.all(color: TColor.primaryText),
+    return MaterialButton(
+      onPressed: onPressed,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
+        side: BorderSide(color: TColor.primaryText),
       ),
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+      color: hasBackground ? TColor.primaryText : Colors.transparent,
+      minWidth: double.infinity,
+      elevation: 0,
+      highlightElevation: 0,
       child: Text(
         text,
         textAlign: TextAlign.center,

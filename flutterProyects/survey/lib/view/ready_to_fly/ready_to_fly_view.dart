@@ -51,9 +51,12 @@ class ReadyToFlyView extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 50),
-                        const OutlineButton(
+                        OutlineButton(
                           text: 'CONTINUE',
                           hasBackground: false,
+                          onPressed: () {
+                            print("Botón CONTINUE presionado");
+                          },
                         ),
                       ],
                     ),
