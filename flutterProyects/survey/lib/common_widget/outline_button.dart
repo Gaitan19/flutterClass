@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:survey/common/color_extenstion.dart';
+import 'package:survey/common/color_extension.dart';
 
 class OutlineButton extends StatelessWidget {
   final String text;

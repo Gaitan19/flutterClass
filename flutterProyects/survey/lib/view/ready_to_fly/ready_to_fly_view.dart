@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:survey/common/color_extenstion.dart';
+import 'package:survey/common/color_extension.dart';
 import 'package:survey/common_widget/outline_button.dart';
+import 'package:survey/view/home/home_view.dart';
 
 class ReadyToFlyView extends StatelessWidget {
   const ReadyToFlyView({super.key});
@@ -55,7 +56,10 @@ class ReadyToFlyView extends StatelessWidget {
                           text: 'CONTINUE',
                           hasBackground: false,
                           onPressed: () {
-                            print("Botón CONTINUE presionado");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeView()));
                           },
                         ),
                       ],
