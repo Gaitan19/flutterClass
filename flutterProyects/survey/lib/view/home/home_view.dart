@@ -9,8 +9,11 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Cambié el color de fondo a blanco
-      appBar: const TopBar(showAvatar: true),
+      backgroundColor: Colors.white,
+      appBar: const TopBar(
+        showAvatar: true,
+        avatarImagePath: 'assets/img/_Avatar_.png',
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
