@@ -16,13 +16,13 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: const Color(0x1A000000), // #0000001A
-            offset: const Offset(0, 4), // Desplazamiento de la sombra
-            blurRadius: 4, // Radio del desenfoque de la sombra
+            color: Color(0x1A000000),
+            offset: Offset(0, 4),
+            blurRadius: 4,
           ),
         ],
       ),
