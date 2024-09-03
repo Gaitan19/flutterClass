@@ -70,16 +70,19 @@ class HomeView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            OutlineButton(
-              text: "Start The Survey",
-              hasBackground: false,
-              onPressed: () {},
-              borderColor: const Color(0xFF2A4ACC),
-              textStyle: const TextStyle(
-                color: Color(0xFF2A4ACC),
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Karla',
+            SizedBox(
+              width: 160,
+              child: OutlineButton(
+                text: "Start The Survey",
+                hasBackground: false,
+                onPressed: () {},
+                borderColor: const Color(0xFF2A4ACC),
+                textStyle: const TextStyle(
+                  color: Color(0xFF2A4ACC),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Karla',
+                ),
               ),
             ),
             const SizedBox(height: 24),
