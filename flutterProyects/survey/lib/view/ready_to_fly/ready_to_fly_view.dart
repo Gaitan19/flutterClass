@@ -61,6 +61,15 @@ class ReadyToFlyView extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => const HomeView()));
                           },
+                          borderColor: Colors.white,
+                          textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                            fontFamily: 'LemonMilkPro',
+                            height: 26 / 15,
+                            letterSpacing: 5,
+                          ),
                         ),
                       ],
                     ),
