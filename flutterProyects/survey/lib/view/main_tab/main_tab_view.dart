@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:survey/common/color_extension.dart';
+import 'package:survey/common/common_data.dart';
+import 'package:survey/common_widget/tab_item.dart';
 import 'package:survey/view/device/device_view.dart';
 import 'package:survey/view/help/help_view.dart';
 import 'package:survey/view/home/home_view.dart';
@@ -17,7 +19,7 @@ class _MainTabViewState extends State<MainTabView>
 
   @override
   void initState() {
-    controller = TabController(length: 3, vsync: this);
+    controller = TabController(length: tabItems.length, vsync: this);
     controller?.addListener(() {
       if (mounted) {
         setState(() {});
@@ -45,91 +47,27 @@ class _MainTabViewState extends State<MainTabView>
             fontSize: 8,
             fontWeight: FontWeight.w600,
             fontFamily: 'LemonMilkPro',
-            letterSpacing: 2.4, // Espaciado de letras (30%)
+            letterSpacing: 2.4,
           ),
           unselectedLabelStyle: const TextStyle(
             fontSize: 8,
             fontWeight: FontWeight.w600,
             fontFamily: 'LemonMilkPro',
-            letterSpacing: 2.4, // Espaciado de letras (30%)
+            letterSpacing: 2.4,
           ),
           indicatorColor: Colors.transparent,
           indicatorSize: TabBarIndicatorSize.tab,
           padding: EdgeInsets.zero,
-          tabs: [
-            Tab(
-              child: FittedBox(
-                fit: BoxFit.contain,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/img/home.png",
-                      width: 30,
-                      height: 25,
-                      fit: BoxFit.contain,
-                      color: controller?.index == 0
-                          ? TColor.secondary
-                          : TColor.white,
-                    ),
-                    const SizedBox(height: 4), // Espaciado entre ícono y texto
-                    const Text(
-                      "HOME",
-                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Tab(
-              child: FittedBox(
-                fit: BoxFit.contain,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/img/device.png",
-                      width: 26,
-                      height: 37,
-                      fit: BoxFit.contain,
-                      color: controller?.index == 1
-                          ? TColor.secondary
-                          : TColor.white,
-                    ),
-                    const SizedBox(height: 4),
-                    const Text(
-                      "DEVICE",
-                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Tab(
-              child: FittedBox(
-                fit: BoxFit.contain,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/img/help.png",
-                      width: 32,
-                      height: 32,
-                      fit: BoxFit.contain,
-                      color: controller?.index == 2
-                          ? TColor.secondary
-                          : TColor.white,
-                    ),
-                    const SizedBox(height: 4),
-                    const Text(
-                      "HELP",
-                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+          tabs: tabItems.map((tabData) {
+            return TabItem(
+              imagePath: tabData.imagePath,
+              label: tabData.label,
+              index: tabData.index,
+              imageWidth: tabData.imageWidth,
+              imageHeight: tabData.imageHeight,
+              controller: controller,
+            );
+          }).toList(),
         ),
       ),
     );
