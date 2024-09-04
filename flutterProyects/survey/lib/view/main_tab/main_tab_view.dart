@@ -30,62 +30,107 @@ class _MainTabViewState extends State<MainTabView>
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
-          controller: controller,
-          children: const [HomeView(), DeviceView(), HelpView()]),
+        controller: controller,
+        children: const [HomeView(), DeviceView(), HelpView()],
+      ),
       bottomNavigationBar: BottomAppBar(
         color: TColor.primary,
         elevation: 0,
         child: TabBar(
-            controller: controller,
-            labelColor: TColor.secondary,
-            labelPadding: EdgeInsets.zero,
-            unselectedLabelColor: TColor.white,
-            labelStyle: const TextStyle(
-                fontSize: 8,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'LemonMilkPro'),
-            unselectedLabelStyle: const TextStyle(
-                fontSize: 8,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'LemonMilkPro'),
-            indicatorColor: Colors.transparent,
-            indicatorSize: TabBarIndicatorSize.tab,
-            padding: EdgeInsets.zero,
-            tabs: [
-              Tab(
-                icon: Image.asset(
-                  "assets/img/home.png",
-                  width: 25,
-                  height: 25,
-                  fit: BoxFit.contain,
-                  color:
-                      controller?.index == 0 ? TColor.secondary : TColor.white,
+          controller: controller,
+          labelColor: TColor.secondary,
+          labelPadding: EdgeInsets.zero,
+          unselectedLabelColor: TColor.white,
+          labelStyle: const TextStyle(
+            fontSize: 8,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'LemonMilkPro',
+            letterSpacing: 2.4, // Espaciado de letras (30%)
+          ),
+          unselectedLabelStyle: const TextStyle(
+            fontSize: 8,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'LemonMilkPro',
+            letterSpacing: 2.4, // Espaciado de letras (30%)
+          ),
+          indicatorColor: Colors.transparent,
+          indicatorSize: TabBarIndicatorSize.tab,
+          padding: EdgeInsets.zero,
+          tabs: [
+            Tab(
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/home.png",
+                      width: 30,
+                      height: 25,
+                      fit: BoxFit.contain,
+                      color: controller?.index == 0
+                          ? TColor.secondary
+                          : TColor.white,
+                    ),
+                    const SizedBox(height: 4), // Espaciado entre ícono y texto
+                    const Text(
+                      "HOME",
+                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
+                    ),
+                  ],
                 ),
-                text: "Home",
               ),
-              Tab(
-                icon: Image.asset(
-                  "assets/img/device.png",
-                  width: 25,
-                  height: 25,
-                  fit: BoxFit.contain,
-                  color:
-                      controller?.index == 1 ? TColor.secondary : TColor.white,
+            ),
+            Tab(
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/device.png",
+                      width: 26,
+                      height: 37,
+                      fit: BoxFit.contain,
+                      color: controller?.index == 1
+                          ? TColor.secondary
+                          : TColor.white,
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      "DEVICE",
+                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
+                    ),
+                  ],
                 ),
-                text: "Device",
               ),
-              Tab(
-                icon: Image.asset(
-                  "assets/img/help.png",
-                  width: 25,
-                  height: 25,
-                  fit: BoxFit.contain,
-                  color:
-                      controller?.index == 2 ? TColor.secondary : TColor.white,
+            ),
+            Tab(
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/img/help.png",
+                      width: 32,
+                      height: 32,
+                      fit: BoxFit.contain,
+                      color: controller?.index == 2
+                          ? TColor.secondary
+                          : TColor.white,
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      "HELP",
+                      style: TextStyle(letterSpacing: 2.4), // Letter spacing
+                    ),
+                  ],
                 ),
-                text: "Help",
               ),
-            ]),
+            ),
+          ],
+        ),
       ),
     );
   }
