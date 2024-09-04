@@ -89,23 +89,6 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: TColor.primary),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.devices, color: TColor.primary),
-            label: 'Device',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.help, color: TColor.primary),
-            label: 'Help',
-          ),
-        ],
-      ),
     );
   }
 }

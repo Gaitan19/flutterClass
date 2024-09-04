@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:survey/common/color_extension.dart';
 import 'package:survey/common_widget/outline_button.dart';
 import 'package:survey/view/home/home_view.dart';
+import 'package:survey/view/main_tab/main_tab_view.dart';
 
 class ReadyToFlyView extends StatelessWidget {
   const ReadyToFlyView({super.key});
@@ -59,7 +60,7 @@ class ReadyToFlyView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const HomeView()));
+                                    builder: (context) => const MainTabView()));
                           },
                           borderColor: Colors.white,
                           textStyle: const TextStyle(
